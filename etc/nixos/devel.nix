@@ -4,7 +4,6 @@
 	sbt
 	openjdk
 	visualvm
-	idea.idea-ultimate
 	];
  nixpkgs.config.allowUnfree = true;
 }

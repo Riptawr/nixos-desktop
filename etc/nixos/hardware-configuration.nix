@@ -13,8 +13,16 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/2aaf11ed-36ea-4a05-bc96-0f0511f28278";
+      fsType = "btrfs";
+      options = [ "noatime" "discard" ];
+    };
+
+  # Disposable non-sensible stuff, like temp downloads
+  fileSystems."/mnt/data" =
+    { device = "/dev/disk/by-uuid/a5bb5a34-5b86-4f00-bbf4-7015330176ba";
       fsType = "btrfs";
       options = [ "noatime" "discard" ];
     };
