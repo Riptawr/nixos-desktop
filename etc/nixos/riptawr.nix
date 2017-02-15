@@ -15,5 +15,8 @@
 	feh
 	];
 
+   environment.variables = {
+	BROWSER = "vivaldi";
+	EDITOR = "vim";
+   };
 }
-
