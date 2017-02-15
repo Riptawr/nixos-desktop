@@ -75,7 +75,7 @@
     isNormalUser = true;
     uid = 1000;
     openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCeWEySIoWsH/aXnluy1YEvVD/riDu0kiELjSie7u83HRWAun8UyZT11lCssBgv+XRhW8SBxDYFWbsf6eXCqg3c3YS1qmRHXH1Twa+Y4FDAF8woZDh9jH49bSnVYedcrgG58hPPFBT+UBjaWgVdehP08gASPuBiQTjjCj/JgqlIFPG2AIU8ISr88R6QZWx144Qq/ZC0jDIg1FYJuAK+/WEJYb5N1E299ek1lNLU2Val0b1MHfUArtud3ssj9hlBtMdRQdWKjzQg3eQsXp1Ey7sQiqltlOZzMXHB26NaGTjug0BGInUDBv2bdHFGnLA0QjcMgYlJ2QTsMI+qYyYb1gmt riptawr@codebot-2014-03-07" ]; 
-    extraGroups = [ "wheel" "networkmanager" "adm" "disk" ];
+    extraGroups = [ "wheel" "networkmanager" "adm" "disk" "docker" "uucp" ];
   };
 
   users.users.riptawr.shell = pkgs.zsh;
