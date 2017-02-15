@@ -17,18 +17,20 @@ exec --no-startup-id feh --randomize --bg-fill ~/wallpapers/* &
 exec setxkbmap -option 'grp:alt_shift_toggle' 'us,ru' &
 
 # Screen autolock:
-#exec xautolock -time 10 -locker "i3lock -i '/home/riptawr/wallpapers/brZKW0c.png'" &
 bindsym $mod+ctrl+l exec i3lock-fancy
-# Mapping function keys
+
+# Brightness on FN keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
 ## Sink 1 is analog stereo
 bindsym XF86AudioRaiseVolume exec sh -c "pactl set-sink-volume 1 +5%"
 bindsym XF86AudioLowerVolume exec sh -c "pactl set-sink-volume 1 -5%"
 bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle
-## Screens with escrotum
-bindsym Print exec "escrotum ~/Pictures/$(date '+%Y%m%d-%H%M%S').png" 
-bindsym Shift+Print exec "escrotum -s ~/Pictures/$(date '+%Y%m%d-%H%M%S').png"
+
+## Screens with escrotum, requires a default.nix to be available with the correct environment
+bindsym Print exec "nix-shell --run 'escrotum ~/screenshots/$(date '+%Y%m%d-%H%M%S').png'" 
+bindsym Shift+Print exec "nix-shell --run 'escrotum -s ~/screenshots/$(date '+%Y%m%d-%H%M%S').png'"
 
 set $mod Mod4
 

@@ -26,5 +26,6 @@ This repo is part of my attempt to get a working nixos desktop setup, similar to
 2. decrypt it and mount int /mnt
 3. ```nixos install --root /mnt```
 4. copy the [configuration](etc/nixos/) from this repo, but do not overwrite ```hardware-configuration.nix```  
-5. modify ```configuration.nix``` to point to correct partition instead of /dev/sda2
+5. modify ```configuration.nix``` to point to correct partition instead of /dev/sda2 (see your hardware-configuration.nix)
 6. install nixos as usual
+7. (optional) copy contents from the `userhome` dir into your home to get i3 up and running
