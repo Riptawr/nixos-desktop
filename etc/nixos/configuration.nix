@@ -54,31 +54,18 @@
 
   # List services that you want to enable:  
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  
-  # Enable compton (for WM u)
-  #services.compton-git = true;
-  
   # Enable NM and applet
   networking.networkmanager.enable = true;
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.extraUsers.guest = {
-  #   isNormalUser = true;
-  #   uid = 1000;
-  # };
   users.extraUsers.riptawr = {
     isNormalUser = true;
     uid = 1000;
     openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCeWEySIoWsH/aXnluy1YEvVD/riDu0kiELjSie7u83HRWAun8UyZT11lCssBgv+XRhW8SBxDYFWbsf6eXCqg3c3YS1qmRHXH1Twa+Y4FDAF8woZDh9jH49bSnVYedcrgG58hPPFBT+UBjaWgVdehP08gASPuBiQTjjCj/JgqlIFPG2AIU8ISr88R6QZWx144Qq/ZC0jDIg1FYJuAK+/WEJYb5N1E299ek1lNLU2Val0b1MHfUArtud3ssj9hlBtMdRQdWKjzQg3eQsXp1Ey7sQiqltlOZzMXHB26NaGTjug0BGInUDBv2bdHFGnLA0QjcMgYlJ2QTsMI+qYyYb1gmt riptawr@codebot-2014-03-07" ]; 
     extraGroups = [ "wheel" "networkmanager" "adm" "disk" "docker" "uucp" ];
   };
-
-  users.users.riptawr.shell = pkgs.zsh;
 
   # Immutable user settings, no runtime additions
   #users.mutableUsers = false;
