@@ -13,10 +13,14 @@
 	which
 	unzip
 	feh
+	hexchat
+	firefox
 	];
 
    environment.variables = {
 	BROWSER = "vivaldi";
 	EDITOR = "vim";
    };
+
+   users.users.riptawr.shell = pkgs.zsh;
 }
