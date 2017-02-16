@@ -4,7 +4,9 @@
 	sbt
 	openjdk
 	visualvm
+	openssl
 	];
+
  nixpkgs.config.allowUnfree = true;
 }
 
