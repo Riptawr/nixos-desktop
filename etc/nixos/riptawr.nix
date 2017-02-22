@@ -15,6 +15,7 @@
 	feh
 	hexchat
 	firefox
+	sublime
 	];
 
    environment.variables = {
