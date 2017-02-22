@@ -16,6 +16,7 @@
 	hexchat
 	firefox
 	sublime
+	ranger
 	];
 
    environment.variables = {
