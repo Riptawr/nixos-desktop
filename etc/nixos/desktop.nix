@@ -5,18 +5,28 @@
   	layout = "us";
   	#videoDrivers = [ "nvidia" "intel" ];
 
-  	synaptics.enable = true;
-  	synaptics.twoFingerScroll = true;
-  	synaptics.accelFactor = "0.005";
-  	synaptics.maxSpeed = "4.0";
+  	synaptics = {
+  	    enable = true;
+  	    twoFingerScroll = true;
+  	    accelFactor = "0.005";
+  	    maxSpeed = "4.0";
+  	};
   
   	windowManager.i3.enable = true;
+
+  	displayManager.lightdm = {
+  	    enable = true;
+  	    greeters.gtk.enable = true; # TODO: replace with lighter stuff
+  	};
   };
+
+  #desktop dependent services, can be skipped otherwise
+  services.samba.enable = true;
 
   hardware = {
    bumblebee = {
-	connectDisplay = true;
-	enable = true;
+	connectDisplay = false;
+	enable = false;
     };
    cpu.intel.updateMicrocode = true;
     opengl = {
@@ -32,8 +42,11 @@
   environment.systemPackages = with pkgs; [ 
 	# i3 WM with XFCE4 essentials 
 	i3 i3status i3lock-fancy i3pystatus
-        dmenu
- 	gtk gnome.gnomeicontheme hicolor_icon_theme shared_mime_info
+    dmenu
+ 	gtk
+ 	gnome.gnome_icon_theme
+ 	hicolor_icon_theme
+ 	shared_mime_info
 	xautolock
 	xorg.xbacklight
 	xss-lock
@@ -43,6 +56,7 @@
 
 	xfce.gtk_xfce_engine
 	xfce.gvfs
+	samba
 	xfce.terminal
 	xfce.thunar
 	xfce.thunar_volman
@@ -67,6 +81,11 @@
 	bumblebee
 	glxinfo
 	primus
+
+	# Net
+	networkmanager
+	networkmanager_openvpn
+	networkmanagerapplet
 	];
 }
 
