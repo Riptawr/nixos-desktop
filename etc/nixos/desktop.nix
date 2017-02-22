@@ -22,6 +22,7 @@
 
   #desktop dependent services, can be skipped otherwise
   services.samba.enable = true;
+  networking.networkmanager.enable = true;
 
   hardware = {
    bumblebee = {
@@ -63,6 +64,7 @@
 	xfce.xfce4icontheme
 	xfce.xfce4settings
 	xfce.xfconf
+	xarchiver
 
 	# Audio and Players
 	pavucontrol
@@ -86,6 +88,9 @@
 	networkmanager
 	networkmanager_openvpn
 	networkmanagerapplet
+	
+	#Misc
+	remmina
 	];
 }
 
